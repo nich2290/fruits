@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+    }
+    img {
+      width: 50%;
+    }
+    .headline {
+      text-align: center;
+      background: -webkit-linear-gradient(red, orange, yellow, green);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 10rem;
+      text-shadow: 20px 10px 2px rgba(0, 0, 0, 0.418);
+    }
+    #app {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-left: 15vh;
+      margin-right: 15vh;
+    }
+    #app > article {
+      border-bottom: 2px solid black;
+    }
+    #app > article:nth-child(odd) {
+      border-right: 2px solid black;
+    }
+    .shake {
+      animation: 2s shake infinite alternate;
+    }
+    @keyframes shake {
+      0% {
+        transform: skewX(-15deg) scale(1.5);
+      }
+      5% {
+        transform: skewX(15deg);
+      }
+      10% {
+        transform: skewX(-15deg);
+      }
+      15% {
+        transform: skewX(15deg) scale (10.5);
+      }
+      20% {
+        transform: skewX(0deg);
+      }
+      100% {
+        transform: skewX(0deg) scale (1);
+      }
+    }
+  </style>
+  <body>
+    <h1 class="headline shake">A Fruity Feeling</h1>
+    <button>Add fruit</button>
+    <div id="app"></div>
+    <template>
+      <article class="fruit">
+        <h1></h1>
+        <h3></h3>
+        <p></p>
+        <img />
+      </article>
+    </template>
+    <script src="index.js"></script>
+  </body>
+</html>
